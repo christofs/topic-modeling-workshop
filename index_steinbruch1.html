@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <!-- CUSTOMIZE THIS! -->
-<title>Topic Modeling Workshop</title>
+<title>Topic Modeling Tutorial</title>
 <meta name="author" content="Christof Schöch">
 <!-- END -->
 <meta name="description" content="Slides">
@@ -35,14 +35,14 @@ document.getElementsByTagName( 'head' )[0].appendChild( link );
 
 <section data-markdown>
 <script type="text/template">
-# Topic Modeling Workshop
+# Topic Modeling Tutorial
 <hr/>
 <br/>
-<p>Christof Schöch und Ulrike Henny<br/>(CLiGS, Universität Würzburg)</p>
+<p>Workshop Digitale Forschungsmethoden in der Romanistik</p>
+<p>Forum Junge Romanistik 2016, Universität Würzburg</p>
 <br/>
 <hr/>
-<p>Köln, 9. Dezember 2016</p>
-<p>CCeH / DiXiT / AG Digitale Romanistik</p>
+<p>Christof Schöch<br/>(CLiGS, Universität Würzburg)</p>
 <p><img height="50" data-src="img/basics/UWUE.jpg"></img>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img height="100" data-src="img/basics/CLiGS.jpg"></img>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img height="50" data-src="img/basics/BMBF.jpg"></img></p>
 </script>
 </section>
@@ -50,22 +50,19 @@ document.getElementsByTagName( 'head' )[0].appendChild( link );
 <section data-markdown>
 <script type="text/template">
 ## Überblick
-1. Session 1: Was ist Topic Modeling?
-2. Session 2: Anwendung: MALLET
-3. Session 3: Anwendung: Postprocessing und Visualisierung
-4. Session 4: Abschlussdiskussion
+1. Theorie: Was ist Topic Modeling?
+2. Anwendung: Der Topic Modeling Workflow (tmw)
+3. Ergebnisse: Visualisierungen der Topics
+4. Ergebnisse: Visualisierungen der Verteilungen
+5. Weiterführendes
 </script>
 </section>
-
-
-
-
 
 <section>
 
 <section data-markdown>
 <script type="text/template">
-# Session 1<br/>Was ist Topic Modeling?
+# 1. Was ist Topic Modeling?
 </script>
 </section>
 
@@ -111,14 +108,9 @@ Etwas technischer
 </section>
 <section>
 
-
-
-
-
-
 <section data-markdown>
 <script type="text/template">
-# Session 2:<br/> Anwendung von MALLET</h2>
+# 2. Anwendung: Topic Modeling Workflow</h2>
 </script>
 </section>
 
@@ -141,17 +133,10 @@ Etwas technischer
 
 </section>
 <section>
-
-
-
-
-
-
-
-    
+	
 <section data-markdown>
 <script type="text/template">
-# Session 3:<br/>Postprocessing und Visualisierung
+# 3. Ergebnisse: Visualisierung der Topics
 </script>
 </section>
 
@@ -223,17 +208,9 @@ Etwas technischer
 </section>
 <section>
 
-
-
-
-
-
-
-    
-
 <section data-markdown>
 <script type="text/template">
-# Session 4:<br/> Abschlussdiskussion</h2>
+# 4. Ergebnisse: Visualisierung der Verteilungen</h2>
 </script>
 </section>
 
@@ -305,9 +282,6 @@ Etwas technischer
 </section>
 <section>
 
-
-
-
 <section data-markdown>
 <script type="text/template">
 # 5. Weiterführendes</h2>
@@ -318,7 +292,6 @@ Etwas technischer
 <script type="text/template">
 ## Lektürehinweise: Theorie und Technik
 <small>
-
 * Blei, D. M. (2012). "Probabilistic topic models". In: _Communications of the ACM_, 55(4): 77–84. http://www.cs.princeton.edu/~blei/papers/Blei2012.pdf
 * Steyvers, M. and Griffiths, T. (2006). "Probabilistic Topic Models". In: Landauer, T. et al. (eds), _Latent Semantic Analysis: A Road to Meaning_. Laurence Erlbaum.
 * Weingart, S. (2012). "Topic Modeling for Humanists: A Guided Tour". In: _The Scottbot Irregular_. http://www.scottbot.net/HIAL/?p=19113
@@ -336,7 +309,6 @@ Etwas technischer
 * Rhody, L. M. (2012). "Topic Modeling and Figurative Language". In: _Journal of Digital Humanities_, 2(1) http://journalofdigitalhumanities.org/2-1/topic-modeling-and-figurative-language-by-lisa-m-rhody/
 * Schöch, C. (2016). "Topic Modeling Genre: An Exploration of French Classical and Enlightenment Drama". In: _Digital Humanities Quarterly_. http://digitalhumanities.org/dhq/
 * Underwood, T. and Goldstone, A. (2012)." "What can topic models of PMLA teach us about the history of literary scholarship?" In: _The Stone and the Shell_. http://tedunderwood.com/2012/12/14/what-can-topic-models-of-pmla-teach-us-about-the-history-of-literary-scholarship/
-
 </small>
 </script>
 </section>
@@ -352,7 +324,7 @@ Etwas technischer
 <br/>
 <br/>
 <br/>
-<p>Autoren: Christof Schöch und Ulrike Henny 2016</p>
+<p>Autor: Christof Schöch, 2016</p>
 <p><a href="http://www.christof-schoech.de">christof-schoech.de</a>
 <hr/>
 <p>Lizenz: Creative Commons Attribution 4.0 International</p>
@@ -370,21 +342,21 @@ Etwas technischer
 // Full list of configuration options available at:
 // https://github.com/hakimel/reveal.js#configuration
 Reveal.initialize({
-    controls: true,
-    progress: true,
-    history: true,
-    center: true,
-    transition: 'slide', // none/fade/slide/convex/concave/zoom
-    // Optional reveal.js plugins
-    dependencies: [
-        { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
-        { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-        { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-        { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-        { src: 'plugin/zoom-js/zoom.js', async: true },
-        { src: 'plugin/notes/notes.js', async: true }
-        ]
-    });
+	controls: true,
+	progress: true,
+	history: true,
+	center: true,
+	transition: 'slide', // none/fade/slide/convex/concave/zoom
+	// Optional reveal.js plugins
+	dependencies: [
+		{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+		{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+		{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+		{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+		{ src: 'plugin/zoom-js/zoom.js', async: true },
+		{ src: 'plugin/notes/notes.js', async: true }
+		]
+	});
 </script>
 </body>
 </html>
