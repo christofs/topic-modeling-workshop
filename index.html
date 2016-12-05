@@ -303,28 +303,26 @@ Etwas technischer
 
 <section data-markdown>
 <script type="text/template">
-## (1) Importing texts into Mallet
-* tell the computer to use Mallet
-* tell Mallet to import texts
-* ...where the text files are
-* ...where to save the corpus to
-* Optionally: ...how to tokenize the texts
-* Optionally: ...whether to use stopwords, and which stoplist to use
+## (1) Texte importieren
+* Anweisung an den Computer: MALLET benutzen
+* Anweisung an MALLET: Texte importieren, und: 
+* ...wo sind die Textdateien
+* ...wohin soll das Korpus gespeichert werden
+* ...wie soll tokenisiert werden
+* ...Stopwords verwenden, Stopwords-Datei
 </script>
 </section>
 
 <section data-markdown>
 <script type="text/template">
-## Importing texts into Mallet (Linux)
-(using the Terminal; from anywhere on the system)
+## Texte importieren (Linux)
 ```
-/home/[USER]/Programs/Mallet/bin/mallet 
-import-dir 
---input /home/[USER]/Desktop/krakow-mallet/data/docs-all  
---output /home/[USER]/Desktop/krakow-mallet/data/docs-all.mallet
+/home/christof/repos/other/Mallet/bin/mallet import-dir 
+--input /home/christof/.../demo/lemmas/  
+--output /home/christof/... demo/press-en.mallet
 --keep-sequence  --token-regex '\p{L}[\p{L}\p{P}]*\p{L}' 
 --remove-stopwords TRUE
---stoplist-file /home/[USER]/Desktop/krakow-mallet/data/stopwords/doyle_100.txt
+--stoplist-file /home/christof/... demo/extras/en-lemma_stopwords-project.txt
 ```
 </script>
 </section>
@@ -350,16 +348,17 @@ import-dir
 
 <section data-markdown>
 <script type="text/template">
-## (2) Build the topic model
-* tell the computer to run Mallet
-* tell Mallet to do some modeling (`train-topics`)
-* ...where the corpus file is (`--input`)
-* ...how many topics to model (`--num-topics`)
-* ...in which interval to optimize internal parameters (`--optimize-interval`)
-* ...how many iterations to use (`--num-iterations`)
-* ...how many words to display per topic (`--num-topic-words`)
-* ...path for words-by-topics (`--output-topic-keys`)
-* ...path for topics-per-doc (`--output-doc-topics`)
+## (2) Das Topic Model erstellen
+* Anweisung an den Computer: MALLET verwenden
+* Anweisung an MALLET: modellieren (`train-topics`), und:
+* ...wo die Korpus-Datei ist (`--input`)
+* ...wie viele Topics (`--num-topics`)
+* ...Parameter-Optimierung (`--optimize-interval`)
+* ...wie viele Iterationen (`--num-iterations`)
+* ...wie viele Wörter anzeigen (`--num-topic-words`)
+* ...Pfad für: Topics mit Wörtern (`--output-topic-keys`) 
+* ...Pfad für: Topics pro Dokument (`--output-doc-topics`)
+* ...Pfad für: words-by-topics (`--topic-word-weights-file`)
 </script>
 </section>
 
@@ -368,15 +367,15 @@ import-dir
 <script type="text/template">
 ## (2) Build the topic model (Linux)
 ```
-/home/[USER]/Programs/Mallet/bin/mallet 
-train-topics  
---input /home/[USER]/Desktop/krakow-mallet/data/docs-all.mallet 
+/home/christof/repos/other/Mallet/bin/mallet train-topics  
+--input /home/christof/... demo/press-en.mallet
 --num-topics 20 
 --optimize-interval 50 
 --num-iterations 500 
 --num-top-words 20 
---output-topic-keys /home/[USER]/Desktop/krakow-mallet/models/docs-all/topics-with-words.txt 
---output-doc-topics /home/[USER]/Desktop/krakow-mallet/models/docs-all/topics-in-texts.txt 
+--output-topic-keys /home/christof/... demo/model/topics-with-words.txt 
+--output-doc-topics /home/christof/... demo/model/topics-in-texts.txt 
+--topic-word-weights-file /home/christof/... demo/model/word-weights.txt 
 --doc-topics-max 20
 ```
 </script>
