@@ -172,20 +172,30 @@ Etwas technischer
 
 <section data-markdown>
 <script type="text/template">
-## Preprocessing, Modeling, Postprocessing
-<img height="500" data-src="img/tm_tmw.png"></img>
+## Topic Modeling Workflow
+<p><a href="img/2_topic-modeling-workflow.png"><img height="500" data-src="img/2_topic-modeling-workflow.png"></img></a></p>
+<p>(Mallet und Python; siehe <a href="http://github.com/cligs/tmw">github.com/cligs/tmw</a>.)</p>
+</script>
+</section>
+
+
+<section data-markdown>
+<script type="text/template">
+## Umsetzung: Mallet und Python
+* MALLET (Machine Learning for Language Toolkit, https://github.com/mimno/Mallet): das eigentliche Topic Modeling 
+* Python (Programmiersprache, https://www.python.org/): alles andere drumherum (tmw)
 </script>
 </section>
 
 <section data-markdown>
 <script type="text/template">
-## Umsetzung: Mallet und Python
-* MALLET = Machine Learning for Language Toolkit, https://github.com/mimno/Mallet
-* Python = Programmiersprache, https://www.python.org/
-* tmw = Topic Modeling Workflow, https://github.com/cligs/tmw
-* tmw = modulare Funktionen + Konfigurationsdatei
+## Parameter
+* Präprozessieren: Länge der Textsegmente, Lemmatisierung, Feature-Selektion  <!-- .element: class="fragment" data-fragment-index="1" -->
+* Modellieren: Anzahl der Topics, Anzahl der Iterationen, Optimierungsmodus  <!-- .element: class="fragment" data-fragment-index="2" -->
+* Visualisierung: Berechnung der Mittelwerte, Normalisierungen  <!-- .element: class="fragment" data-fragment-index="3" -->
 </script>
 </section>
+
 
 </section>
 <section>
