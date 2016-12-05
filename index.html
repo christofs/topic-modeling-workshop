@@ -230,6 +230,13 @@ Etwas technischer
 
 <section data-markdown>
 <script type="text/template">
+## (a) Überblick
+</script>
+</section>
+
+
+<section data-markdown>
+<script type="text/template">
 ## Topic Modeling Workflow
 <p><a href="img/2_topic-modeling-workflow.png"><img height="500" data-src="img/2_topic-modeling-workflow.png"></img></a></p>
 <p>(Mallet und Python; siehe <a href="http://github.com/cligs/tmw">github.com/cligs/tmw</a>.)</p>
@@ -253,6 +260,146 @@ Etwas technischer
 * Visualisierung: Berechnung der Mittelwerte, Normalisierungen  <!-- .element: class="fragment" data-fragment-index="3" -->
 </script>
 </section>
+
+<section data-markdown>
+<script type="text/template">
+## (c) MALLET verwenden
+</script>
+</section>
+
+<section data-markdown>
+<script type="text/template">
+## Ausgangssituation
+* Mallet 2.0.8 ist installiert (und wir kennen den Pfad!)
+* Ein Arbeitsordner (vom USB-Stick), mit: 
+   * Ordner mit der Textsammlung
+   * Eine Textdatei mit Stopwords
+   * Ein Ordner für den Output ("model/")
+</script>
+</section>
+
+
+<section data-markdown>
+<script type="text/template">
+## MALLET aufrufen: Zwei Schritte
+* "import"
+    * Konvertiert alle Textdateien in das MALLET corpus-Format
+    * Berücksichtigt die Stopwords, schreibt eine Binärdatei 
+* "train-topics"
+    * Führt das eigentliche Topic modeling durch
+    * Schreibt eine Reihe von Output-Dateien
+</script>
+</section>
+
+
+<section data-markdown>
+<script type="text/template">
+## (1) Importing texts into Mallet
+* tell the computer to use Mallet
+* tell Mallet to import texts
+* ...where the text files are
+* ...where to save the corpus to
+* Optionally: ...how to tokenize the texts
+* Optionally: ...whether to use stopwords, and which stoplist to use
+</script>
+</section>
+
+<section data-markdown>
+<script type="text/template">
+## Importing texts into Mallet (Linux)
+(using the Terminal; from anywhere on the system)
+```
+/home/[USER]/Programs/Mallet/bin/mallet 
+import-dir 
+--input /home/[USER]/Desktop/krakow-mallet/data/docs-all  
+--output /home/[USER]/Desktop/krakow-mallet/data/docs-all.mallet
+--keep-sequence  --token-regex '\p{L}[\p{L}\p{P}]*\p{L}' 
+--remove-stopwords TRUE
+--stoplist-file /home/[USER]/Desktop/krakow-mallet/data/stopwords/doyle_100.txt
+```
+</script>
+</section>
+
+
+<section data-markdown>
+<script type="text/template">
+## Importing texts into Mallet (Windows)
+(using the `cmd` Terminal; from `C:\Programs\mallet\`)
+```
+bin\mallet 
+import-dir 
+--input C:\Users\[USER]\Desktop\krakow-mallet\data\docs-all 
+--output C:\Users\[USER]\Desktop\krakow-mallet\data\docs-all.mallet 
+--keep-sequence 
+--remove-stopwords TRUE 
+--stoplist-file C:\Users\[USER]\Desktop\krakow-mallet\data\stopwords\doyle-100.txt
+```
+</script>
+</section>
+
+
+
+<section data-markdown>
+<script type="text/template">
+## (2) Build the topic model
+* tell the computer to run Mallet
+* tell Mallet to do some modeling (`train-topics`)
+* ...where the corpus file is (`--input`)
+* ...how many topics to model (`--num-topics`)
+* ...in which interval to optimize internal parameters (`--optimize-interval`)
+* ...how many iterations to use (`--num-iterations`)
+* ...how many words to display per topic (`--num-topic-words`)
+* ...path for words-by-topics (`--output-topic-keys`)
+* ...path for topics-per-doc (`--output-doc-topics`)
+</script>
+</section>
+
+
+<section data-markdown>
+<script type="text/template">
+## (2) Build the topic model (Linux)
+```
+/home/[USER]/Programs/Mallet/bin/mallet 
+train-topics  
+--input /home/[USER]/Desktop/krakow-mallet/data/docs-all.mallet 
+--num-topics 20 
+--optimize-interval 50 
+--num-iterations 500 
+--num-top-words 20 
+--output-topic-keys /home/[USER]/Desktop/krakow-mallet/models/docs-all/topics-with-words.txt 
+--output-doc-topics /home/[USER]/Desktop/krakow-mallet/models/docs-all/topics-in-texts.txt 
+--doc-topics-max 20
+```
+</script>
+</section>
+
+<section data-markdown>
+<script type="text/template">
+## (2) Build the topic model (Windows)
+```
+bin\mallet 
+train-topics 
+--input C:\\Users\[USER]\Desktop\krakow-mallet\data\docs-all.mallet 
+--num-topics 20 
+--optimize-interval 50 
+--num-iterations 500 
+--num-top-words 20 
+--output-topic-keys C:\\Users\[USER]\Desktop\krakow-mallet\models\docs-all\topics-with-words.txt 
+--output-doc-topics C:\\Users\[USER]\Desktop\krakow-mallet\models\docs-all\topics-in-texts.txt 
+--doc-topics-max 20
+```
+</script>
+</section>
+
+<section data-markdown>
+<script type="text/template">
+## Inspecting the results
+* Open the `topics-with-words.txt` file with gedit or Notepad++ (or Calc/Excel; rename to CSV if necessary)
+* Open the `topics-in-texts.txt` file with gedit or Notepad++ (or Calc/Excel; rename to CSV if necessary)
+</script>
+</section>
+
+
 
 
 </section>
