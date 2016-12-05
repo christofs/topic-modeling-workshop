@@ -230,7 +230,7 @@ Etwas technischer
 
 <section data-markdown>
 <script type="text/template">
-## (a) Überblick
+## (a) Überblick über den Workflow
 </script>
 </section>
 
@@ -349,6 +349,8 @@ import-dir
 <section data-markdown>
 <script type="text/template">
 ## (2) Das Topic Model erstellen
+
+<small>
 * Anweisung an den Computer: MALLET verwenden
 * Anweisung an MALLET: modellieren (`train-topics`), und:
 * ...wo die Korpus-Datei ist (`--input`)
@@ -359,13 +361,15 @@ import-dir
 * ...Pfad für: Topics mit Wörtern (`--output-topic-keys`) 
 * ...Pfad für: Topics pro Dokument (`--output-doc-topics`)
 * ...Pfad für: words-by-topics (`--topic-word-weights-file`)
+
+</small>
 </script>
 </section>
 
 
 <section data-markdown>
 <script type="text/template">
-## (2) Build the topic model (Linux)
+## (2) Das Topic Model erstellen (Linux)
 ```
 /home/christof/repos/other/Mallet/bin/mallet train-topics  
 --input /home/christof/... demo/press-en.mallet
@@ -401,9 +405,9 @@ train-topics
 
 <section data-markdown>
 <script type="text/template">
-## Inspecting the results
-* Open the `topics-with-words.txt` file with gedit or Notepad++ (or Calc/Excel; rename to CSV if necessary)
-* Open the `topics-in-texts.txt` file with gedit or Notepad++ (or Calc/Excel; rename to CSV if necessary)
+## Ergebnisse anschauen
+* Die verschiedenen Dateien, die das Modell repräsentieren, öffnen und anschauen
+* Tools: gedit oder Notepad++ (oder Calc/Excel; wenn notwendig zu CSV umbenennen)
 </script>
 </section>
 
