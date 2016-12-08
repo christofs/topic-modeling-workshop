@@ -391,9 +391,9 @@ Iterativ
 <script type="text/template">
 ## Texte importieren (Linux)
 ```
-/home/christof/repos/other/Mallet/bin/mallet import-dir 
---input /home/christof/.../demo/lemmas/  
---output /home/christof/... demo/press-en.mallet
+/home/christof/Programs/Mallet/bin/mallet import-dir 
+--input /home/christof/.../demo/5_lemmata/  
+--output /home/christof/... demo/6_model/press-en.mallet
 --keep-sequence  --token-regex '\p{L}[\p{L}\p{P}]*\p{L}' 
 --remove-stopwords TRUE
 --stoplist-file /home/christof/... demo/extras/en-lemma_stopwords-project.txt
@@ -446,14 +446,14 @@ import-dir
 ## (2) Das Topic Model erstellen (Linux)
 ```
 /home/christof/repos/other/Mallet/bin/mallet train-topics  
---input /home/christof/... demo/press-en.mallet
+--input /home/christof/... demo/6_model/press-en.mallet
 --num-topics 20 
 --optimize-interval 50 
 --num-iterations 500 
 --num-top-words 20 
---output-topic-keys /home/christof/... demo/model/topics-with-words.txt 
---output-doc-topics /home/christof/... demo/model/topics-in-texts.txt 
---topic-word-weights-file /home/christof/... demo/model/word-weights.txt 
+--output-topic-keys /home/christof/... demo/6_model/topics-with-words.txt 
+--output-doc-topics /home/christof/... demo/6_model/topics-in-texts.txt 
+--topic-word-weights-file /home/christof/... demo/6_model/word-weights.txt 
 --doc-topics-max 20
 ```
 </script>
