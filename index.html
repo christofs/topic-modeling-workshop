@@ -5,6 +5,7 @@
 <!-- CUSTOMIZE THIS! -->
 <title>Topic Modeling Workshop</title>
 <meta name="author" content="Christof Schöch">
+<meta name="author" content="Ulrike Henny">
 <!-- END -->
 <meta name="description" content="Slides">
 <meta name="apple-mobile-web-app-capable" content="yes">
@@ -72,30 +73,96 @@ document.getElementsByTagName( 'head' )[0].appendChild( link );
 
 <section data-markdown>
 <script type="text/template">
-# (a) Wie funktioniert Topic Modeling?
+# (a) Was ist Topic Modeling? Wie funktioniert es?
+</script>
+</section>
+
+<section data-markdown>
+<script type="text/template">
+## Was ist Topic Modeling?
+> "Topic modeling is complicated and potentially messy but useful and even fun. The best way to understand how it works is to try it."
+> (Megan R. Brett)
 </script>
 </section>
 
 
 <section data-markdown>
 <script type="text/template">
-## Topic Modeling
+## Was ist Topic Modeling?
+* Topic Modeling ist eine quantitative Methode der Textanalyse
+* Wortverteilungen in einem Korpus von Dokumenten werden statistisch ermittelt
+* besonders gut geeignet für große Textsammlungen
+</script>
+</section>
+
+<section data-markdown>
+<script type="text/template">
+## Ziel von Topic Modeling
+* Aufdecken versteckter semantischer Strukturen
+* Distributionelle Semantik: "a word is characterized by the company it keeps" (John Firth, 1957)
+* Topic Modeling identifiziert so automatisch wiederkehrende Themen, Motive, Diskurse
+* Wichtig: keinerlei explizites semantisches Wissen fließt ein
+</script>
+</section>
+
+<section data-markdown>
+<script type="text/template">
+## Woher kommt Topic Modeling?
+* vor allem empirisch entwickelt
+* ursprünglich für Information Retrieval (Suche nach Themen)
+
+### Methoden
+
+* aktuell verbreitet: LDA (*Latent Dirichlet Allocation*), 2003
+* Vorläufer: PLSA (*Probabilistic Latent Semantic Analysis*) / LSI (*Latent Semantic Indexing*), 1999
+</script>
+</section>
+
+<section data-markdown>
+<script type="text/template">
+## Wie funktioniert Topic Modeling?
 Grundidee
 * Entdeckt Wörter, die immer wieder gemeinsam bzw. in ähnlichen Kontexten vorkommen (Topics)
-* Berechnet, wie wichtig jeder Topic in jedem Dokument ist
-* Wichtig: keinerlei explizites semantisches Wissen fließt ein
+* Berechnet, wie wichtig jedes Topic in jedem Dokument ist
+</script>
+</section>
+
+<section data-markdown>
+<script type="text/template">
+## Wie funktioniert Topic Modeling?
 Etwas technischer
 * Ein Topic ist eine Verteilung von Wahrscheinlichkeiten von Wörtern
 * Ein Dokument ist eine Verteilung von Wahrscheinlichkeiten von Topics
 </script>
 </section>
 
-
 <section data-markdown>
 <script type="text/template">
 ## Wörter, Topics, Dokumente
 <p><img height="500" data-src="img/tm_blei.png"></img></p>
 <p>(David Blei, "Probabilistic Topic Models", 2012)</p>
+</script>
+</section>
+
+<section data-markdown>
+<script type="text/template">
+## Generativ, Iterativ
+Generativ
+* dem Verfahren liegt ein generatives Modell zugrunde
+* Wie hätten die Dokumente entstanden sein können?
+
+Iterativ
+
+	für jedes __Dokument__ in der Sammlung:
+	
+		wähle eine Topic-Verteilung
+	
+			für jedes __Wort__ im Dokument
+		
+				wähle ein Topic, zu dem das Wort gehört
+				wähle ein Wort aus dem Topic
+				
+	wiederhole den ganzen Prozess!
 </script>
 </section>
 
@@ -112,6 +179,13 @@ Etwas technischer
 ## Generativ, Iterativ
 <p><img height="500" data-src="img/tm_steyvers2.png"></img></p>
 <p>(Steyvers and Griffiths, "Probabilistic Topic Modeling", 2006)</p>
+</script>
+</section>
+
+<section data-markdown>
+<script type="text/template">
+## Begriffe und Konzepte
+* Document, Word, Topic
 </script>
 </section>
 
